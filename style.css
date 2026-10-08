@@ -1,0 +1,62 @@
+*{box-sizing:border-box}
+:root{--cream:#f8f0e6;--paper:#ead3ba;--rose:#b88469;--deep:#4d3a30;--gold:#b8945c}
+html,body{margin:0;min-height:100%;font-family:Montserrat,Arial,sans-serif}
+body{background:#bba895;color:#fff;overflow:hidden}
+.stage{position:relative;min-height:100vh;display:grid;place-items:center;overflow:hidden;background-image:url("assets/garden-castle.png");background-size:cover;background-position:center}
+.veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(54,44,43,.10),rgba(60,45,38,.18));backdrop-filter:saturate(.75)}
+.welcome{position:relative;z-index:4;text-align:center;transition:opacity .9s,transform 1s,filter .9s}
+.welcome.exit{opacity:0;transform:scale(1.06) translateY(-20px);filter:blur(7px);pointer-events:none}
+.eyebrow{margin:0 0 9px;font-size:9px;letter-spacing:.38em;text-transform:uppercase;text-shadow:0 2px 12px #57473f}
+.welcome h1{margin:0;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(29px,5vw,58px);letter-spacing:.16em;text-transform:uppercase;text-shadow:0 3px 20px rgba(55,38,30,.35)}
+.names-preview{margin:5px 0 20px;font-family:"Great Vibes",cursive;font-size:clamp(30px,5vw,54px);text-shadow:0 3px 15px rgba(45,30,20,.35)}
+.names-preview span{font-family:"Cormorant Garamond";font-style:italic;padding:0 7px}
+.envelope-button{border:0;background:transparent;color:white;cursor:pointer;padding:0;display:block;margin:auto}
+.envelope{position:relative;width:min(78vw,430px);aspect-ratio:1.55;perspective:900px;filter:drop-shadow(0 28px 25px rgba(45,27,17,.28));transition:transform .35s}
+.envelope-button:hover .envelope{transform:translateY(-5px) rotateX(2deg)}
+.back{position:absolute;inset:0;background:#c89e79;border-radius:2px}
+.paper{position:absolute;z-index:1;left:8%;right:8%;top:8%;height:84%;background:linear-gradient(135deg,#fffaf3,#eadac8);display:grid;place-items:center;flex-direction:column;color:#775d4e;box-shadow:0 4px 15px rgba(50,30,20,.12);transition:transform 1.05s cubic-bezier(.2,.85,.2,1),z-index 0s 0s}
+.paper-monogram{font-family:"Cormorant Garamond";font-size:35px;letter-spacing:.1em}
+.paper-monogram span{font-style:italic;color:var(--rose)}
+.paper-text{font-family:"Great Vibes";font-size:23px;margin-top:-50px}
+.left-fold{position:absolute;z-index:3;left:0;bottom:0;width:50%;height:100%;background:#d8b18e;clip-path:polygon(0 0,100% 50%,0 100%)}
+.right-fold{position:absolute;z-index:3;right:0;bottom:0;width:50%;height:100%;background:#b98c69;clip-path:polygon(100% 0,0 50%,100% 100%)}
+.bottom-fold{position:absolute;z-index:4;left:0;bottom:0;width:100%;height:57%;background:#cea17c;clip-path:polygon(0 100%,50% 0,100% 100%)}
+.flap{position:absolute;z-index:5;top:0;left:0;width:100%;height:63%;background:linear-gradient(145deg,#bd906e,#aa7b5d);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transition:transform 1.05s cubic-bezier(.2,.85,.2,1)}
+.wax-seal{position:absolute;z-index:7;left:50%;top:53%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#c99b78,#8f5f4d);display:grid;place-items:center;border:2px solid rgba(255,255,255,.22);box-shadow:0 6px 13px rgba(60,35,22,.25);transition:opacity .35s,transform .5s}
+.wax-seal span{font-size:23px}
+.envelope.open .flap{transform:rotateX(180deg)}
+.envelope.open .wax-seal{opacity:0;transform:translate(-50%,-50%) scale(.5)}
+.envelope.open .paper{transform:translateY(-44%) scale(1.03);z-index:8}
+.tap{display:block;margin-top:16px;font-size:9px;letter-spacing:.32em;text-shadow:0 2px 8px #514038}
+.hint{font-size:8px;opacity:.65;letter-spacing:.12em;margin-top:22px}
+.invitation{position:absolute;inset:0;z-index:20;display:grid;place-items:center;padding:18px;background:rgba(51,39,34,.25);opacity:0;visibility:hidden;transition:opacity .9s,visibility .9s}
+.invitation.show{opacity:1;visibility:visible}
+.card{position:relative;width:min(92vw,620px);max-height:92vh;overflow:auto;background:rgba(250,245,237,.97);color:var(--deep);text-align:center;padding:42px clamp(24px,6vw,70px);border:1px solid rgba(255,255,255,.8);box-shadow:0 30px 100px rgba(45,26,17,.3);transform:translateY(40px) scale(.94);opacity:0;transition:transform 1s cubic-bezier(.2,.85,.2,1),opacity .8s}
+.show .card{transform:none;opacity:1}
+.close{position:absolute;right:17px;top:11px;border:0;background:none;font-size:27px;color:#987e6d;cursor:pointer}
+.ornament{font-size:22px;color:var(--gold);margin-bottom:8px}
+.dark{color:#8e7463;text-shadow:none}
+.script{font-family:"Great Vibes";font-size:30px;margin:5px 0 2px;color:#9c715e}
+.card h2{font-family:"Cormorant Garamond";font-size:clamp(46px,8vw,76px);font-weight:500;line-height:.95;margin:4px 0 16px;letter-spacing:.02em}
+.card h2 span{font-style:italic;color:var(--rose);font-size:.72em}
+.line{height:1px;width:80px;background:var(--gold);margin:0 auto 18px}
+.intro{font-family:"Cormorant Garamond";font-size:20px;line-height:1.35;max-width:450px;margin:0 auto 25px;color:#6b574b}
+.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid #dfd0c1;border-bottom:1px solid #dfd0c1;padding:18px 0}
+.event{display:flex;flex-direction:column;gap:5px;font-family:"Cormorant Garamond"}
+.icon{font-size:23px;color:var(--rose)}
+.event b{font-size:13px;letter-spacing:.06em}
+.event span{font-size:16px;color:#796457}
+.countdown{display:flex;justify-content:center;gap:24px;margin:24px 0}
+.countdown div{display:flex;flex-direction:column;min-width:55px}
+.countdown strong{font-family:"Cormorant Garamond";font-size:31px;font-weight:500}
+.countdown small{font-size:7px;letter-spacing:.15em;text-transform:uppercase;color:#8b7669}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.button{border:1px solid #8d705f;background:#765c4d;color:#fff;text-decoration:none;padding:12px 20px;font-size:9px;letter-spacing:.19em;cursor:pointer}
+.button.ghost{background:transparent;color:#765c4d}
+.footer-note{font-family:"Great Vibes";font-size:22px;color:#9c715e;margin:25px 0 0}
+.toast{position:fixed;z-index:50;left:50%;bottom:25px;transform:translate(-50%,20px);background:#4f3d33;color:#fff;padding:11px 17px;border-radius:30px;font-size:10px;opacity:0;pointer-events:none;transition:.4s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+#particles{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.particle{position:absolute;width:5px;height:5px;border-radius:50%;background:rgba(255,245,225,.75);box-shadow:0 0 12px rgba(255,245,225,.7);animation:float 7s linear infinite}
+@keyframes float{from{transform:translateY(110vh) rotate(0deg);opacity:0}15%{opacity:1}85%{opacity:1}to{transform:translateY(-15vh) rotate(360deg);opacity:0}}
+@media(max-width:600px){.event-grid{grid-template-columns:1fr}.event-grid .event{padding:5px}.countdown{gap:9px}.countdown div{min-width:48px}.card{padding-top:38px}.welcome h1{letter-spacing:.1em}}

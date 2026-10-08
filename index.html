@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d9c0a7">
+  <title>Ahmed & Sarah — Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="particles"></div>
+
+  <main class="stage">
+    <div class="veil"></div>
+
+    <section class="welcome" id="welcome">
+      <p class="eyebrow">A LITTLE ENVELOPE • A BIG MOMENT</p>
+      <h1>Open the Invitation</h1>
+      <p class="names-preview">Ahmed <span>&</span> Sarah</p>
+
+      <button class="envelope-button" id="openInvitation" aria-label="Open the wedding invitation">
+        <div class="envelope">
+          <div class="paper">
+            <div class="paper-monogram">A <span>&</span> S</div>
+            <div class="paper-text">Our Wedding</div>
+          </div>
+          <div class="back"></div>
+          <div class="left-fold"></div>
+          <div class="right-fold"></div>
+          <div class="bottom-fold"></div>
+          <div class="flap"></div>
+          <div class="wax-seal"><span>♥</span></div>
+        </div>
+        <span class="tap">TAP TO OPEN</span>
+      </button>
+
+      <p class="hint">Turn your sound on for the full experience</p>
+    </section>
+
+    <section class="invitation" id="invitation" aria-hidden="true">
+      <div class="card">
+        <button class="close" id="closeInvitation" aria-label="Close invitation">×</button>
+
+        <div class="ornament">✦</div>
+        <p class="eyebrow dark">WITH JOY IN OUR HEARTS</p>
+        <p class="script">We are getting married</p>
+
+        <h2>Ahmed <span>&</span> Sarah</h2>
+
+        <div class="line"></div>
+
+        <p class="intro">
+          Together with our families, we invite you to celebrate
+          the beginning of our forever.
+        </p>
+
+        <div class="event-grid">
+          <div class="event">
+            <div class="icon">◷</div>
+            <b>Saturday</b>
+            <span>20 December 2026</span>
+          </div>
+          <div class="event">
+            <div class="icon">⌖</div>
+            <b>Garden Hall</b>
+            <span>Cairo, Egypt</span>
+          </div>
+          <div class="event">
+            <div class="icon">♡</div>
+            <b>Seven O'Clock</b>
+            <span>In the evening</span>
+          </div>
+        </div>
+
+        <div class="countdown">
+          <div><strong id="days">00</strong><small>Days</small></div>
+          <div><strong id="hours">00</strong><small>Hours</small></div>
+          <div><strong id="minutes">00</strong><small>Minutes</small></div>
+          <div><strong id="seconds">00</strong><small>Seconds</small></div>
+        </div>
+
+        <div class="actions">
+          <a class="button" href="https://maps.google.com/?q=Cairo,Egypt" target="_blank" rel="noopener">VIEW LOCATION</a>
+          <button class="button ghost" id="rsvp">RSVP</button>
+        </div>
+
+        <p class="footer-note">We can't wait to celebrate with you ♡</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">Thank you! Your RSVP button is ready to connect.</div>
+  <script src="script.js"></script>
+</body>
+</html>
